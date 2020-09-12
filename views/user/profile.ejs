@@ -1,0 +1,17 @@
+<%- include('../partiales/header') -%>
+<%- include('../partiales/navbar') -%>
+
+<div class="container">
+
+    <h1 class="display-5" style="margin-left: 35%; margin-top: 10px;">Profile</h1>
+    <%- include('../partiales/errorMessages') -%>
+    <p>
+        <% if(user) {%>
+            <% for(let i = 0; i < user.length; i++) {%>
+                document.write(<%= user[i]%>)
+            <%}%>
+        <%}%>
+    </p>
+</div>
+
+<%- include('../partiales/footer') -%>

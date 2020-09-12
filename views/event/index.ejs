@@ -1,0 +1,27 @@
+<%- include('../partiales/header') -%>
+<%- include('../partiales/navbar') -%>
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="col md-12">
+      <%- include('../partiales/errorMessages') -%>
+    </div>
+  </div>
+  <% for (let i = 0; i < chunks.length; i++) { %>
+  <div class="row mt-3">
+    <% for (let j = 0; j < chunks[i].length; j++) { %>
+    <div class="col-sm-6 col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= chunks[i][j].title%></h5>
+          <p class="card-text"><%= chunks[i][j].description%></p>
+          <a href="<%= '/index/' + chunks[i][j]._id%>" class="btn btn-primary">More</a>
+        </div>
+      </div>
+    </div>
+    <%}%>
+</div>
+<%}%>
+  </div>
+
+  <%- include('../partiales/footer') -%>

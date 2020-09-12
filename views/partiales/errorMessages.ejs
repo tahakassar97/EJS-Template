@@ -1,0 +1,24 @@
+<%if (locals.errors) {%>
+<% for (let i = 0; i < errors.length; i++) {%>
+<div class="alert alert-danger"><%= errors[i].msg%></div>
+<%}%>
+<%}%>
+<!-- we can remove locals. if we put the message directly at ejs file -->
+
+<% if (locals.message && locals.message.length > 0) {%>
+<div class="alert alert-success">
+    <%= message%>
+</div>
+<%}%>
+
+<% if (locals.invalidPasswords && locals.invalidPasswords.length > 0) {%>
+<div class="alert alert-danger">
+    <%= invalidPasswords%>
+</div>
+<%}%>
+
+<% if (locals.success && locals.success.length > 0) {%>
+<div class="alert alert-success">
+    <%= success%>
+</div>
+<%}%>

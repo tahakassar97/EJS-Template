@@ -1,0 +1,9 @@
+<%- include('../partiales/header') -%>
+<%- include('../partiales/navbar') -%>
+<div class="card-body">
+    <h5 class="card-title"><%= data.date.toDateString()%></h5>
+    <a href="<%='/index/edit/' + data._id%>" class="btn btn-primary">Edit</a>
+    <a data-id="<%= data._id%>" id="deleteBTN" onclick="deleteEvent('<%= data._id%>')" class="btn btn-danger">Delete</a>
+</div>
+
+<%- include('../partiales/footer') -%>

@@ -1,0 +1,6 @@
+show dbs;
+use datebase_name;
+db.createCollection('collection_name'); // table
+db.collection_name.insert({attribute: 'value', ....});
+db.collection_name.find().pretty();
+db.collection_name.drop();
