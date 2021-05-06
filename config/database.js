@@ -7,3 +7,5 @@ mongoose.connect(db, { useUnifiedTopology: true,  useNewUrlParser: true  } , (er
         console.log("Connected .. ^_^");
     }
 })
+
+module.exports = db;

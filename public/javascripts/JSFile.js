@@ -13,3 +13,16 @@ deleteEvent = (id) => {
             })
     }
 }
+
+// show image
+uploadURL = (img) => {
+    if (img.files && img.files[0]) {
+        let reader = new FileReader();
+        reader.onload = (res) => {
+            let image = document.getElementById('imageView');
+            image.style.display = "block";
+            image.src = res.target.result
+        }
+        reader.readAsDataURL(img.files[0])
+    }
+}

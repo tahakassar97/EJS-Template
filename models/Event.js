@@ -7,10 +7,13 @@ const event = new mongoose.Schema({
     },
     description: {
         type: String,
-        default: 'No Desc'
     },
     date: {
         type: Date,
+        required: true
+    },
+    userID: {
+        type: String,
         required: true
     }
 });

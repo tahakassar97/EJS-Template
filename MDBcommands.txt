@@ -4,3 +4,4 @@ db.createCollection('collection_name'); // table
 db.collection_name.insert({attribute: 'value', ....});
 db.collection_name.find().pretty();
 db.collection_name.drop();
+db.collection_name.deleteOne({condition});

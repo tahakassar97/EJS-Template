@@ -15,13 +15,31 @@
         <div class="card-body">
           <h5 class="card-title"><%= chunks[i][j].title%></h5>
           <p class="card-text"><%= chunks[i][j].description%></p>
-          <a href="<%= '/index/' + chunks[i][j]._id%>" class="btn btn-primary">More</a>
+          <a href="<%= '/index/one/' + chunks[i][j]._id%>" class="btn btn-primary">More</a>
         </div>
       </div>
     </div>
     <%}%>
 </div>
 <%}%>
+    <div class="row">
+      <div class="col-12 mt-5 mb-4">
+        <nav aria-label="...">
+          <ul class="pagination pagination-lg justify-content-center">
+            <% for(let i = 1; i <= Math.ceil(total / 6); i++) {%>
+            <% if(page == i) {%>
+            <li class="page-item active">
+              <a class="page-link" href="<%= '/index/' + i %>"><%= i%></a>
+            </li>
+            <%} else {%>
+            <li class="page-item">
+              <a class="page-link" href="<%= '/index/' + i %>"><%= i%></a>
+            </li>
+            <%}}%>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 
   <%- include('../partiales/footer') -%>

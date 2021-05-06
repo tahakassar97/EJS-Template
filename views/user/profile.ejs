@@ -2,16 +2,33 @@
 <%- include('../partiales/navbar') -%>
 
 <div class="container">
-
     <h1 class="display-5" style="margin-left: 35%; margin-top: 10px;">Profile</h1>
     <%- include('../partiales/errorMessages') -%>
-    <p>
-        <% if(user) {%>
-            <% for(let i = 0; i < user.length; i++) {%>
-                document.write(<%= user[i]%>)
+    <div class="row">
+        <div class="col-2 mt-4 mb-4">
+            <% if(user) {%>
+            <img src="<%= '/images/' + user.image%>">
+            <%} else {%>
+            <img src="<%= '/images/profile.png'%>">
             <%}%>
-        <%}%>
+        </div>
+        <div class="col-2 mt-5 mb-4">
+            <p style="font-size: larger;">
+                <% if (user) {%>
+            Username:
+            <%= user.username%>
+            <%}%>
     </p>
+</div>
+</div>
+
+<form action="/users/uploadImage" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" id="image" onchange="uploadURL(this)">
+    <input type="submit" class="btn btn-primary" value="Upload">
+    <hr>
+    <img src="" id="imageView" style="display: none;">
+
+</form>
 </div>
 
 <%- include('../partiales/footer') -%>
